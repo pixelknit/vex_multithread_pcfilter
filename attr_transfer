@@ -1,11 +1,9 @@
-string attribs[] = split(chs('attributes'));
-
 int handle = pcopen(1,'P',v@P,ch('radius'),chi('max_pts'));
 
 foreach (int i; string v; attribs)
 {
-  int type = pointattributetype(1,v);
-  int size = pointattributesize(1,v);
+  int type = pointattribtype(1,v);
+  int size = pointattribsize(1,v);
   
   if (type!=1)
   {
@@ -15,18 +13,18 @@ foreach (int i; string v; attribs)
 
     if (size==1)
     {
-      setpointattrib(0,v,@ptnum,float(pcfilter(handle,v));
+      setpointattrib(0,v,@ptnum,float(pcfilter(handle,v)));
     }
     if (size==2)
     {
-      setpointattrib(0,v,@ptnum,vector2(pcfilter(handle,v));
+      setpointattrib(0,v,@ptnum,vector2(pcfilter(handle,v)));
     }
     if (size==3)
     {
-      setpointattrib(0,v,@ptnum,vector(pcfilter(handle,v));
+      setpointattrib(0,v,@ptnum,vector(pcfilter(handle,v)));
     }
     else
     {
-      setpointattrib(0,v,@ptnum,vector4(pcfilter(handle,v));
+      setpointattrib(0,v,@ptnum,vector4(pcfilter(handle,v)));
     }
   }
