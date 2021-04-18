@@ -1,3 +1,5 @@
+string attribs[] = split(chs('attributes'));
+
 int handle = pcopen(1,'P',v@P,ch('radius'),chi('max_pts'));
 
 foreach (int i; string v; attribs)
